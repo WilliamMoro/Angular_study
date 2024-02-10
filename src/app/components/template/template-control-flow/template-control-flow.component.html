@@ -1,0 +1,137 @@
+<!-- Novo modelo -->
+<h2>Curso de Angular!</h2>
+<h3>IF, FOR</h3>
+
+<p>Forma nova</p>
+@if (loadingData$ | async; as data) {
+    <ul>
+        @for(item of data; track item){
+            <li>{{item}}</li>
+        }
+    </ul>
+} @else {
+ <p>Carregando...</p>
+}
+<!-- @for (item of loadingData$ | async; track item) {
+    <li>{{ item }}</li>
+} -->
+
+
+
+
+<!-- Forma antiga  -->
+<p>Forma antiga</p>
+<ng-container *ngIf="loadingData$ | async as data; else loading">
+    <ul>
+        <ng-container *ngFor="let item of data; trackBy: trackByFn">
+            <li>{{item}}</li>
+        </ng-container>
+    </ul>
+</ng-container>
+<ng-template #loading><p>Carregando...</p></ng-template>
+
+<hr>
+
+<!-- Forma nova -->
+@for (item of itens; track item.name;
+    let i = $index;
+    let c = $count;
+    let f = $first;
+    let l = $last;
+    let e = $even;
+    let o = $odd;
+) {
+    <p>{{ item.name }}</p>
+    <p>index - {{ i }}</p>
+    <p>count - {{ c }}</p>
+    <p>first - {{ f }}</p>
+    <p>last - {{ l }}</p>
+    <p>even - {{ e }}</p>
+    <p>odd - {{ o }}</p>
+}
+
+<input #name type="text">
+<button (click)="addNewName(name.value)">Add New Name</button>
+
+<p>Forma antiga</p>
+<ng-container
+    *ngFor="
+    let item of itens;
+    let i = index;
+    let c = count;
+    let f = first;
+    let l = last;
+    let e = even;
+    let o = odd;
+    trackBy: trackByFn
+    "
+>
+    <p>{{ item.name }}</p>
+    <p>index - {{ i }}</p>
+    <p>count - {{ c }}</p>
+    <p>first - {{ f }}</p>
+    <p>last - {{ l }}</p>
+    <p>even - {{ e }}</p>
+    <p>odd - {{ o }}</p>
+
+</ng-container>
+
+<input #name type="text">
+<button (click)="addNewName(name.value)">Add New Name</button>
+
+<hr>
+
+<ul>
+    @for (item of itens; track item.name) {
+        <li>{{ item.name }}</li>
+    } @empty {
+        <li>Não contem valor</li>
+    }
+</ul>
+
+<!-- Forma Antiga -->
+<ul>
+
+    <ng-container *ngIf="itens.length === 0; else itensExist">
+        <li> Não contem valores </li>
+    </ng-container>
+    <ng-template #itensExist>
+        <ng-container *ngFor="let item of itens">
+            <li>
+                {{item.name}}
+            </li>
+        </ng-container>
+    </ng-template>
+</ul>
+
+<hr>
+<!-- Forma nova -->
+<p>Forma nova</p>
+@switch (switchCondition) {
+    @case ('A') {
+        <p>Sim, sua letra é: A</p>
+    }
+    @case ('B') {
+        <p>Sim, sua letra é: B</p>
+    }
+    @default {
+        <p>Os dados não foram encontrados</p>
+    }
+}
+
+<!-- Forma antiga -->
+<p>Forma Antiga</p>
+
+<ng-container [ngSwitch]="switchCondition">
+    <ng-container *ngSwitchCase="'A'">
+        <p>Sim, sua letra é: A</p>
+    </ng-container>
+
+    <ng-container *ngSwitchCase="'B'">
+        <p>Sim, sua letra é: B</p>
+    </ng-container>
+
+    <ng-container *ngSwitchDefault="'C'">
+        <p>Os dados não coram encontrados</p>
+    </ng-container>
+</ng-container>
