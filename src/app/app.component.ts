@@ -26,11 +26,11 @@ import { TemplateDrivenFormsComponent } from './components/form/template-driven-
     <app-signals-component/>
     <app-pai-ou-mae/>
     <app-angular-pipes/>
+    <app-template-driven-forms/>
   -->
     
     <h1>Curso de Angular</h1>
     <app-reactives-forms/>
-    <app-template-driven-forms/>
 
 `,
   
