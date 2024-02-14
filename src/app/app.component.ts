@@ -8,21 +8,26 @@ import { TemplateVariablesComponent } from './components/template/template-varia
 import { TemplateControlFlowComponent } from './components/template/template-control-flow/template-control-flow.component';
 import { TemplateDeferrableViewsComponent } from './components/template/template-deferrable-views/template-deferrable-views.component';
 import { SignalsComponentComponent } from './signals/signals-component/signals-component.component';
+import { PaiOuMaeComponent } from './components/comunicacao-entre-components/pai-ou-mae/pai-ou-mae.component';
+import { AngularPipesComponent } from './components/pipes/angular-pipes/angular-pipes.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, NewComponent, TemplateComponent, FormsModule, TemplateVariablesComponent, TemplateControlFlowComponent, TemplateDeferrableViewsComponent, SignalsComponentComponent],
+  imports: [CommonModule, RouterOutlet, NewComponent, TemplateComponent, FormsModule, TemplateVariablesComponent, TemplateControlFlowComponent, TemplateDeferrableViewsComponent, SignalsComponentComponent, PaiOuMaeComponent, AngularPipesComponent],
   template: ` <!-- <router-outlet /> -->
     <!-- <app-new-component/>
     <app-template-component/>
     <app-template-variables/>
     <app-template-control-flow/> 
-    <app-template-deferrable-views/> -->
+    <app-template-deferrable-views/> 
+    <app-signals-component/>
+    <app-pai-ou-mae/>
+  -->
     
     <h1>Curso de Angular</h1>
-    <app-signals-component/>
-  `
+    <app-angular-pipes/>
+`,
   
 })
 export class AppComponent {}
