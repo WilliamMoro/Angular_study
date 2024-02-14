@@ -10,11 +10,13 @@ import { TemplateDeferrableViewsComponent } from './components/template/template
 import { SignalsComponentComponent } from './signals/signals-component/signals-component.component';
 import { PaiOuMaeComponent } from './components/comunicacao-entre-components/pai-ou-mae/pai-ou-mae.component';
 import { AngularPipesComponent } from './components/pipes/angular-pipes/angular-pipes.component';
+import { ReactivesFormsComponent } from './components/form/reactives-forms/reactives-forms.component';
+import { TemplateDrivenFormsComponent } from './components/form/template-driven-forms/template-driven-forms.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, NewComponent, TemplateComponent, FormsModule, TemplateVariablesComponent, TemplateControlFlowComponent, TemplateDeferrableViewsComponent, SignalsComponentComponent, PaiOuMaeComponent, AngularPipesComponent],
+  imports: [CommonModule, RouterOutlet, NewComponent, TemplateComponent, FormsModule, TemplateVariablesComponent, TemplateControlFlowComponent, TemplateDeferrableViewsComponent, SignalsComponentComponent, PaiOuMaeComponent, AngularPipesComponent, ReactivesFormsComponent, TemplateDrivenFormsComponent],
   template: ` <!-- <router-outlet /> -->
     <!-- <app-new-component/>
     <app-template-component/>
@@ -23,10 +25,13 @@ import { AngularPipesComponent } from './components/pipes/angular-pipes/angular-
     <app-template-deferrable-views/> 
     <app-signals-component/>
     <app-pai-ou-mae/>
+    <app-angular-pipes/>
   -->
     
     <h1>Curso de Angular</h1>
-    <app-angular-pipes/>
+    <app-reactives-forms/>
+    <app-template-driven-forms/>
+
 `,
   
 })
